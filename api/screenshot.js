@@ -1,4 +1,4 @@
-import { chromium } from "playwright-core";
+import { chromium } from "playwright-aws-lambda";
 
 export default async function handler(req, res) {
     if (req.method === 'GET') {
