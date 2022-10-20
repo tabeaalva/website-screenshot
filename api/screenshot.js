@@ -1,9 +1,9 @@
-import { chromium } from "playwright-aws-lambda";
+import * as playwright from "playwright-aws-lambda";
 
 export default async function handler(req, res) {
     if (req.method === 'GET') {
         const {domain} = req.query;
-        const browser = await chromium.launch();
+        const browser = await playwright.launchChromium();
         const page = await browser.newPage();
         await page.goto('https://' + domain);
         const img = await page.screenshot();
