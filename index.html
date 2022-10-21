@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screenshot</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Screenshot from website</h1>
+    <h1>Headless chrome screenshot</h1>
     <div x-data="{domain: '', input: ''}">
-        <form x-on:submit.prevent="domain = input">
+        <h3>Type in you'r website</h3>
+        <form class="form" x-on:submit.prevent="domain = input">
             <input type="text" x-model="input">
             <button type="submit">Take Screenshot</button>
         </form>
