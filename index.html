@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Headless chrome screenshot</h1>
-    <div x-data="{domain: '', input: ''}">
-        <h3>Type in you'r website</h3>
-        <form class="form" x-on:submit.prevent="domain = input">
-            <input type="text" x-model="input">
-            <button type="submit">Take Screenshot</button>
-        </form>
-        <img x-bind:src="domain !== '' ? '/api/screenshot?domain=' + domain : null" alt="">
-    </div>
+    
+    <main class="container">
+        <h1>Headless chrome screenshot</h1>
+        <div x-data="{domain: '', input: ''}">
+            <h2>Type in you'r website</h2>
+            <form class="screenshot-form" x-on:submit.prevent="domain = input">
+                <input type="text" x-model="input">
+                <button type="submit">Take Screenshot</button>
+            </form>
+            <img class="screenshot-image" x-bind:src="domain !== '' ? '/api/screenshot?domain=' + domain : null" alt="">
+        </div>
+    </main>
 </body>
 </html>
